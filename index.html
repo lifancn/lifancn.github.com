@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-	<title>屏幕分辨率测试</title>
-	 <style>
-	 *{padding: 0;margin: 0}
-	 div{width: 200px;height:200px;background: red}
-	</style>
-	<script>
-	alert(1);
-	var width = /*document.documentElement.clientWidth*/window.screen.width;
-	var height =/* document.documentElement.clientHeight*/ window.screen.height;
-	alert('width:'+width);
-	alert('height'+height);
-	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css"/>
+    <title>屏幕分辨率</title>
+    <style>
+        body{
+           background: #cccccc;
+        }
+        header h3{
+            text-align: center;
+            font-weight: bold;
+        }
+        .input-group{
+            margin-bottom: 2px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            document.querySelector('.devW input').value=window.screen.width + ' PX';
+            document.querySelector('.devH input').value=window.screen.height + ' PX';
+        }
+    </script>
 </head>
-
 <body>
-	<div></div>
+ <div class="container">
+     <header class="page-header">
+        <h3>设备开发分辨率</h3>
+     </header>
+     <section>
+         <div class="input-group input-group-lg">
+             <span class="input-group-addon">设&nbsp;备&nbsp;类&nbsp;型</span>
+             <input type="text" class="form-control" value="移动设备" readonly>
+         </div>
+         <div class="input-group devW input-group-lg">
+             <span class="input-group-addon">设&nbsp;备&nbsp;宽&nbsp;度</span>
+             <input type="text" class="form-control" readonly>
+         </div>
+         <div class="input-group devH input-group-lg">
+             <span class="input-group-addon devH">设&nbsp;备&nbsp;高&nbsp;度</span>
+             <input type="text" class="form-control" readonly>
+         </div>
+     </section>
+ </div>
 </body>
 </html>
